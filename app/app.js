@@ -6,6 +6,8 @@ var app = angular.module('myApp', [
   'ui.bootstrap',
   'ngCookies'
 ]).
+
+
 config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 
