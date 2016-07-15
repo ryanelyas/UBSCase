@@ -7,6 +7,8 @@ var app = angular.module('myApp', [
   'ngCookies',
   'ngAnimate'
 ]).
+
+
 config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
 

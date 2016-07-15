@@ -39,4 +39,5 @@ function MasterCtrl($scope, $cookieStore, $location, $state) {
     window.onresize = function() {
         $scope.$apply();
     };
+
 }
