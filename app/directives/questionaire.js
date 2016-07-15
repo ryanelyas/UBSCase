@@ -14,6 +14,7 @@ app.directive('quiz', function(quizFactory) {
 			scope.reset = function() {
 				scope.inProgress = false;
 				scope.score = 0;
+                                scope.quizOver = false;
 			}
  
 			scope.getQuestion = function() {
@@ -27,20 +28,63 @@ app.directive('quiz', function(quizFactory) {
 					scope.quizOver = true;
 				}
 			};
+                        
+                        scope.$watch(
+                                "quizOver",
+                                function handleQuizOver(newValue, oldValue) {
+                                    $('#questionaire-pie').highcharts({
+                                            chart: {
+                                                    plotBackgroundColor: null,
+                                                    plotBorderWidth: null,
+                                                    plotShadow: false
+                                            },
+                                            tooltip: {
+                                                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                                            },
+                                            plotOptions: {
+                                                    pie: {
+                                                            allowPointSelect: true,
+                                                            cursor: 'pointer',
+                                                            dataLabels: {
+                                                                    enabled: true,
+                                                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                                                            },
+                                                            showInLegend: true
+                                                    }
+                                            },
+                                            series: [{
+                                                            type: 'pie',
+                                                            name: 'Portfolio Share ($)',
+                                                            colorByPoint: true,
+                                                            data: [
+                                                                    ['Liquidity', 12897235.00],
+                                                                    ['Bonds', 500502.02],
+                                                                    ['Equities', 7546422.13],
+                                                                    ['Alt. Investments', 80302.06],
+                                                                    ['Real Estate', 12057500.00],
+                                                                    ['Others', 35043.00]
+                                                            ]
+                                                    }],
+                                            title: {
+                                                    text: null
+                                            }, credits: {
+                                                    enabled: false
+                                            },
+                                            loading: false
+                                    });
+                                }                          
+                        );
  
 			scope.checkAnswer = function() {
 				if(!$('input[name=answer]:checked').length) return;
  
 				var ans = $('input[name=answer]:checked').val();
  
-				if(ans == scope.options[scope.answer]) {
-					scope.score++;
-					scope.correctAns = true;
-				} else {
-					scope.correctAns = false;
-				}
+				scope.score++;
  
 				scope.answerMode = false;
+                                
+                                scope.nextQuestion();
 			};
  
 			scope.nextQuestion = function() {
@@ -53,32 +97,27 @@ app.directive('quiz', function(quizFactory) {
 	}
 });
 
-app.factory('quizFactory', function() {
-	var questions = [
+app.factory('quizFactory', function($timeout) {
+    var questions = [
 		{
-			question: "Which is the largest country in the world by population?",
-			options: ["India", "USA", "China", "Russia"],
-			answer: 2
-		},
-		{
-			question: "When did the second world war end?",
-			options: ["1945", "1939", "1944", "1942"],
+			question: "What is your current age?",
+			options: ["18 - 25", "25 - 50", "50 - 65", "Above 65"],
 			answer: 0
 		},
 		{
-			question: "Which was the first country to issue paper currency?",
-			options: ["USA", "France", "Italy", "China"],
-			answer: 3
-		},
-		{
-			question: "Which city hosted the 1996 Summer Olympics?",
-			options: ["Atlanta", "Sydney", "Athens", "Beijing"],
+			question: "What is your annual income?",
+			options: ["Less than $50000", "$50001 - $100000", "$100001 - $500000", " Above $500000"],
 			answer: 0
 		},
-		{	
-			question: "Who invented telephone?",
-			options: ["Albert Einstein", "Alexander Graham Bell", "Isaac Newton", "Marie Curie"],
-			answer: 1
+		{
+			question: "What is your preferred investment timeline?",
+			options: ["Less than 1 year", "1 - 2 years", "2 - 5 years", "Above 5 years"],
+			answer: 0
+		},
+		{
+			question: "What is your main aim in investing?",
+			options: ["Preservation of wealth", "Aggressive growth", "Steady stream of income", "No real preference"],
+			answer: 0
 		}
 	];
  

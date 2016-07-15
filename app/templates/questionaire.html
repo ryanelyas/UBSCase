@@ -1,8 +1,9 @@
-<div class="quiz-area" ng-show="inProgress">
+<div class="row">
+<div class="col-lg-8" ng-show="inProgress">
 	<div ng-show="!quizOver">
 		<h2 class="text-center" id="question">{{question}}</h2>
 		<ul id="options">
-			<li style="list-style-type:none" ng-repeat="option in options">
+			<li style="list-style-type:none" ng-repeat="option in options" ng-animate="'animate'">
 				<h3><label>
                                     <input type="radio" name="answer" value="{{option}}">
                                         {{option}}
@@ -15,23 +16,27 @@
 
 		<div ng-show="!answerMode">
 			<button ng-click="nextQuestion()" class="next-question">Next</button>
-			<span ng-show="correctAns">That is correct!</span>
-			<span ng-show="!correctAns">Sorry, that is an incorrect answer.</span>
 		</div>
 	</div>
 
-	<div ng-show="quizOver">
-		<h2>Quiz is over</h2>
-		<button ng-click="reset()">Play again</button>
+	<div class="text-center" ng-show="quizOver">
+            <h2>Thank you for answering our questions.</h2>
+            <br>
+                <p>Here, you can see a recommended spread of investment options for you, based off both your previous answers and analyses performed by our own revolutionary analytics module. Should you have any questions about how we arrived at this recommendation, please do not hesitate to contact our wealth managers, who will be happy to discuss this topic with you further.  </p>
+                <br>
+                <button ng-click="reset()">Retry</button>
 	</div>
 
-	<div id="score">
-		Score: {{score}}
-	</div>
 </div>
 
-<div class="intro" ng-show="!inProgress">
-	<p>Welcome to the QuizApp</p>
-        <h2>{{greetings}}</h2>
-	<button id="startQuiz" ng-click="start()">Start the Quiz</button>
+<div id='questionaire-pie' class='col-lg-4' style='float:right;' ng-show='quizOver' ng-controller='HighChartsCtrl'>  
+</div>
+</div>
+
+<div class="col-lg-8" ng-show="!inProgress">
+	<h2 class="text-center">What is your investment style?</h2>
+        <p class="text-center">Answer these questions to find out!</p>
+        <div class="text-center">
+	<button id="startQuiz" ng-click="start()">Start</button>
+        </div>
 </div>

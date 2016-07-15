@@ -25,6 +25,7 @@
   <script src="bower_components/highcharts/highcharts.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   
   <script src="app.js"></script>
   
@@ -160,7 +161,7 @@
           </div>
         </div>
         <div ui-view></div>
-        <div class="col-md-6" ng-show="state.current.name === 'questionaire'">
+        <div ng-show="state.current.name === 'questionaire'">
             <quiz>
         </div>
       </div>
