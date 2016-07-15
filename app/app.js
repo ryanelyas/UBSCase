@@ -33,5 +33,17 @@ config(['$stateProvider', '$urlRouterProvider',
             .state('questionaire', {
                 url: '/questionaire',
                 templateUrl: 'templates/questionaireBlank.html'
+            })
+            .state('dictionarymode', {
+                url: '/dictionarymode',
+                templateUrl: 'templates/dictionarymode.html'
+            })
+            .state('research', {
+                url: '/research',
+                templateUrl: 'templates/research.html'
+            })
+            .state('researches', {
+                url: '/researches',
+                templateUrl: 'templates/researches.html'
             });
     }]);
