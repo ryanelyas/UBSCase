@@ -2,9 +2,9 @@
  * Master Controller
  */
 
-app.controller('MasterCtrl', ['$scope', '$cookieStore', '$location', '$state', MasterCtrl]);
+app.controller('MasterCtrl', ['$scope', '$cookieStore', '$location', '$state','ngDialog', MasterCtrl]);
 
-function MasterCtrl($scope, $cookieStore, $location, $state) {
+function MasterCtrl($scope, $cookieStore, $location, $state, ngDialog ) {
     /**
      * Sidebar Toggle & Cookie Control
      */
@@ -14,6 +14,14 @@ function MasterCtrl($scope, $cookieStore, $location, $state) {
         return window.innerWidth;
     };
     
+    $scope.clickToOpen = function () {
+        ngDialog.open({ template: 'templates/popup.html', className: 'ngdialog-theme-default' });
+    };
+
+    $scope.clickToOpenAns1 = function () {
+        ngDialog.open({ template: 'templates/popupans1.html', className: 'ngdialog-theme-default' });
+    };
+
     $scope.currentPath = $location.path();
     
     $scope.state = $state;
