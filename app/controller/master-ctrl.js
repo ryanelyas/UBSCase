@@ -22,6 +22,14 @@ function MasterCtrl($scope, $cookieStore, $location, $state, ngDialog ) {
         ngDialog.open({ template: 'templates/popupans1.html', className: 'ngdialog-theme-default' });
     };
 
+    $scope.clickToOpenAns2 = function () {
+        ngDialog.open({ template: 'templates/popupans2.html', className: 'ngdialog-theme-default' });
+    };
+
+    $scope.clickToOpenAns3 = function () {
+        ngDialog.open({ template: 'templates/popupans3.html', className: 'ngdialog-theme-default' });
+    };
+
     $scope.currentPath = $location.path();
     
     $scope.state = $state;
