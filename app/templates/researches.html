@@ -9,16 +9,24 @@ and open the template in the editor.
         <title>Research</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .container {
+                width: 100%;
+                margin: 0 auto;
+            }
+        </style>
     </head>
     <body>
-        <div class="row" ng-controller="ResearchesCtrl">
-            <button ng-click="goOil()">Why you should buy Oil now?</button>
-        </div>
-        <div class="row" ng-controller="ResearchesCtrl">
-            <button ng-click="goOil()">Why you should invest in Yen now?</button>
-        </div>
-        <div class="row" ng-controller="ResearchesCtrl">
-            <button ng-click="goOil()">Effects of Brexit</button>
+        <div class="container">
+            <div ng-controller="ResearchesCtrl">
+                <button class="btn btn-lg btn-primary" style="margin-top: 2%;" ng-click="goOil()">Why you should buy Oil now?</button>
+            </div>
+            <div ng-controller="ResearchesCtrl">
+                <button  class="btn btn-lg btn-primary" style="margin-top: 2%;" ng-click="goOil()">Why you should invest in Yen now?</button>
+            </div>
+            <div ng-controller="ResearchesCtrl">
+                <button class="btn btn-lg btn-primary" style="margin-top: 2%;" ng-click="goOil()">Effects of Brexit</button>
+            </div>
         </div>
     </body>
 </html>

@@ -4,70 +4,68 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+      .links {
+          cursor: pointer;
+          font-weight: bold;
+      }
+      .container {
+          width: 95%;
+      }
+  </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>
-            Oil
-    </h1>
+    <h1>Oil</h1>
     <!-- Trigger the modal with a button -->
     <p>
-        The fight for profits from <a data-toggle="modal" data-target="#myModal">bitumen</a>, said to come from the “bottom of the barrel” because of its weight, has been driven by fundamental changes in the market. 
+        The fight for profits from <a class="links" data-toggle="modal" data-target="#myModal">bitumen</a>, said to come from the “bottom of the barrel” because of its weight, has been driven by fundamental changes in the market. 
         Supply has dropped as aging refineries in Europe and the U.S. are closed or converted, while road construction in Asia and Africa has pushed up consumption. 
         That’s created demand for massive oceangoing tankers that keep the material heated.
     </p>
+    <br>
+    <h4><b>Supply Concern</b></h4>
+    <p>
+        The supply disruptions that helped lift crude above $50 in recent months are fading. Oil-sands producers in Canada have restored most of the output halted when wildfires menaced facilities in May and curbed more than 1 million barrels a day, or about 40 percent of supplies. OPEC member Nigeria revived some output in June after militant attacks cut production to a three-decade low, the IEA said.
+    </p>
+    <br>    
+    <h4><b>Demand Concern</b></h4>
+    <p>
+        It’s not only the production of crude oil that has analysts concerned. There is an “epic overhang” of gasoline after refiners built up stockpiles of the fuel at the beginning of the year when crude was cheap, said Amrita Sen, chief oil analyst at London-based consultants Energy Aspects Ltd. Still, she said a drop to as low as $40 a barrel is unlikely unless there’s significant selling by speculative investors.
+    </p>
+    <br>    
+    <h4><b>Supporting View</b></h4>
+    <a href="http://www.bloomberg.com/news/articles/2016-07-14/oil-falls-in-new-york-amid-forecasts-for-40-on-glut-concerns">Oil Rises as Exxon Declares Force Majeure on Nigeria Exports</a>
+    <a href="http://www.bloomberg.com/news/articles/2016-07-14/shale-revolution-extended-to-old-wells-seen-unleashing-more-oil">Shale Revolution Extended to Old Wells Seen Unleashing More Oil</a>
+    <br>
+    <br>
+    <h4><b>Opposing View</b></h4>
+    <a href="http://www.bloomberg.com/news/articles/2016-07-15/china-oil-refining-rises-to-record-as-private-plants-lift-output">China’s Oil Refining Rises to Record on Margins, Teapots</a>
+    <a href="http://www.bloomberg.com/news/videos/2016-07-14/oil-market-adjusts-to-slower-global-demand">Oil Market Adjusts to Slower Global Demand</a>
     
-    <h3>
-            Supply Concern
-        </h3>
-        <p>
-            The supply disruptions that helped lift crude above $50 in recent months are fading. Oil-sands producers in Canada have restored most of the output halted when wildfires menaced facilities in May and curbed more than 1 million barrels a day, or about 40 percent of supplies. OPEC member Nigeria revived some output in June after militant attacks cut production to a three-decade low, the IEA said
-        </p>
-        
-        <h3>
-            Demand Concern
-        </h3>
-        <p>
-            It’s not only the production of crude oil that has analysts concerned. There is an “epic overhang” of gasoline after refiners built up stockpiles of the fuel at the beginning of the year when crude was cheap, said Amrita Sen, chief oil analyst at London-based consultants Energy Aspects Ltd. Still, she said a drop to as low as $40 a barrel is unlikely unless there’s significant selling by speculative investors.
-        </p>
-        
-        <h3>
-            Supporting View
-        </h3>
-        <a href="http://www.bloomberg.com/news/articles/2016-07-14/oil-falls-in-new-york-amid-forecasts-for-40-on-glut-concerns">Oil Rises as Exxon Declares Force Majeure on Nigeria Exports</a>
-        <a href="http://www.bloomberg.com/news/articles/2016-07-14/shale-revolution-extended-to-old-wells-seen-unleashing-more-oil">Shale Revolution Extended to Old Wells Seen Unleashing More Oil</a>
-        
-        <h3>
-            Opposing View
-        </h3>
-        <a href="http://www.bloomberg.com/news/articles/2016-07-15/china-oil-refining-rises-to-record-as-private-plants-lift-output">China’s Oil Refining Rises to Record on Margins, Teapots</a>
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Bitumen</h4>
-        </div>
-        <div class="modal-body">
-          <p>a black viscous mixture of hydrocarbons obtained naturally or as a residue from petroleum distillation. It is used for road surfacing and roofing.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Bitumen</h4>
+          </div>
+          <div class="modal-body">
+            <p>a black viscous mixture of hydrocarbons obtained naturally or as a residue from petroleum distillation. It is used for road surfacing and roofing.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
-      
-    </div>
-  </div>
-  
+    </div> 
 </div>
-
 </body>
 </html>
 
